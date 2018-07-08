@@ -1,0 +1,51 @@
+<form style="text-align: center">
+    <div class="form-group">
+        <label for="studentName">Your Name : </label>
+        <input required name="name" ngModel #name="ngModel" style="width: 500px; margin-left: 430px" type="text" class="form-control" id="studentName" placeholder="Name">
+        <div style="width: 300px; margin-left: 530px; box-align: center" class="alert alert-danger" *ngIf="!name.valid && submitflag == true">Name is Compulssory.</div>
+    </div >
+
+    <div class="form-group">
+        <label for="address">Address : </label>
+        <textarea name="address" ngModel #address="ngModel" placeholder="Address" style="width: 500px; margin-left: 430px" type="test" class="form-control" id="address"></textarea>
+    </div >
+
+    <div class="form-group">
+        <label>Sex :</label>
+        <br>
+        <input name="sex" ngModel #sex="ngModel" type="radio" name = "Sex" value="male"> Male
+        <input name="sex" ngModel #sex="ngModel" type="radio" name="Sex" value = "female"> Female
+    </div >
+
+    <div class="form-group">
+        <label for="mobileNumber">Mobile Number : </label>
+        <input name="mobileno" ngModel #mobileno="ngModel" style="width: 500px; margin-left: 430px" type="tel" class="form-control" id="mobileNumber" placeholder="Cell No.">
+    </div >
+
+    <div class="form-group">
+        <label for="collegename">College Name : </label>
+        <input name="collegename" ngModel #collegename="ngModel" style="width: 500px; margin-left: 430px" type="text" class="form-control" id="collegename" placeholder="College Name">
+    </div >
+    
+    <div class="form-group">
+        <label for="emailid">Email ID : </label>
+        <input name="emailid" ngModel #emailid="ngModel" style="width: 500px; margin-left: 430px" type="email" class="form-control" id="emailid" placeholder="Email">
+    </div >
+
+    <label>
+         Your Batch :
+    </label>    
+    <select ngModel name="batchname" #batchname="ngModel" style="width: 500px; margin-left: 430px" class="form-control">
+        <option>Pre - Placement Activities</option>
+        <option>Logic Building</option>
+        <option>Project</option>
+        <option>Web Development</option>
+     </select>
+
+    <div class="form-group">
+        <input name="rememberflag" ngModel #rememberflag="ngModel" type="checkbox" name="remember" id="rememberbox"/>
+        <label for="rememberbox">Remember your details?</label><br><br>
+        <button class="btn btn-primary" (click) = "saveData(name,address,sex,mobileno,collegename,emailid,batchname)">Submit</button>
+    </div>    
+
+    </form>

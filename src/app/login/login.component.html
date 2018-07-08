@@ -1,0 +1,17 @@
+<form style="text-align: center">
+        <div class="form-group">
+            <label for="username">User Name : </label>
+            <input required name="username" ngModel #username="ngModel" style="width: 500px; margin-left: 430px" type="text" class="form-control" maxlength="10" id="username" placeholder="Username">
+            <div style="width: 300px; margin-left: 530px; box-align: center" class="alert alert-danger" *ngIf="!username.valid && loginflag == true">Invalid Username</div>
+            
+        </div >
+  
+        <div class="form-group">
+                <label for="password">Password : </label>
+                <input required name="password" ngModel #password="ngModel" style="width: 500px; margin-left: 430px" type="password" (change) = "passupdate(password)" class="form-control" id="password" placeholder="This is a test. Correct password = akshitparmar">
+                <div style="width: 300px; margin-left: 530px; box-align: center" class="alert alert-danger" *ngIf="isPasswordIncorrect() && loginflag == true">Password Incorrect</div>
+               
+        </div>     
+            <button class="btn btn-primary" (click) = "saveloginData(username,password)">Login</button>
+
+</form>
